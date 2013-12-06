@@ -8,8 +8,9 @@ public class Students {
                 Random random = new Random();
 
                 File file = new File("class.csv");
-                Scanner scan = new Scanner (file);
-                String[] names = scan.nextLine().split(",");
+                Scanner scan = new Scanner(System.in);
+                Scanner reader = new Scanner (file);
+                String[] names = reader.nextLine().split(",");
                 //int[] used = new int[30];
 
         for (int i=names.length-1; i>0; i--) {
@@ -26,13 +27,15 @@ public class Students {
 
 
         // }
+        
+        int randomStudent = random.nextInt(names.length);
+        System.out.println("The random student is " + names[randomStudent]);
 
-                //System.out.println("How many groups do you want?");
-                //int groups = reader.nextInt();
-                int groups = 5;
-                //if (names.length % groups == 0) {
-                System.out.println(names.length);
-                System.out.println(groups);
+                System.out.println("How many groups do you want?");
+                int groups = scan.nextInt();
+                //int groups = 5;
+                if (names.length % groups == 0) {
+               
                         int people = names.length / groups;
                         String[][] groupedNames = new String[groups][people];
                         int counter = 0;
@@ -46,8 +49,16 @@ public class Students {
                            System.out.println(groupedNames[3][i]);     
                         }
                         
-                        //System.out.println("Hello");
-                // }
+                } else if (names.length % groups != 0) {
+                   int numberOfPeople = names.length/groups;
+                   int remainder = names.length % groups;   
+                    for (int i=0; i<groups; i++) {
+                        for (int j=0; j<numberOfPeople; j++) {
+                            System.out.println(names[j]);
+                        }
+                    }
+
+                }
 
 
 
