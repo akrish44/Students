@@ -22,17 +22,14 @@ public class Students {
 
 
         }
-        // for (int j=0; j<names.length; j++) {
-        //         System.out.println(names[j]);
-
-
-        // }
         
         int randomStudent = random.nextInt(names.length);
         System.out.println("The random student is " + names[randomStudent]);
+        System.out.println();
 
                 System.out.println("How many groups do you want?");
                 int groups = scan.nextInt();
+            
                 //int groups = 5;
                 if (names.length % groups == 0) {
                
@@ -50,17 +47,26 @@ public class Students {
                         }
                         
                 } else if (names.length % groups != 0) {
-                   int numberOfPeople = names.length/groups;
+                   int people = names.length / groups;
                    int remainder = names.length % groups;   
+                   int count = 0;
+                   String[] evenNames = new String[groups];
+
+
                     for (int i=0; i<groups; i++) {
-                        for (int j=0; j<numberOfPeople; j++) {
-                            System.out.println(names[j]);
+                        for (int j=0; j<people; j++) {
+                            evenNames[i] = names[count];
+                            
+                            System.out.println(evenNames[i] + " ");
+                            count++;
+                            
                         }
+                    System.out.println();
+                    
+                            }
+                        if (remainder > 0) {
+                        System.out.println("Amount of people who are not in a group: " + remainder);
                     }
-
                 }
-
-
-
-         }
+            }
 }
