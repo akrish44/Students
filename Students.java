@@ -64,9 +64,12 @@ public class Students {
                     System.out.println();
                     
                             }
-                        if (remainder > 0) {
-                        System.out.println("Amount of people who are not in a group: " + remainder);
+                        for (int i=0; i<remainder; i++) {
+                       
+                        System.out.println("The leftover student: " + names[count]);
+                        count++;
                     }
+                    System.out.println("Amount of people who are not in a group: " + remainder);
                 }
             }
 }
